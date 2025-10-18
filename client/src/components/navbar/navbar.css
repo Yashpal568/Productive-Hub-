@@ -1,0 +1,92 @@
+/* Glassy dark navbar */
+.navbar {
+  background: rgba(20, 20, 20, 0.85); /* semi-transparent */
+  backdrop-filter: blur(10px);       /* glass effect */
+  /* Remove hard border */
+  border-bottom: none; 
+  /* Soft shadow for separation */
+  box-shadow: 0 4px 20px rgba(13, 110, 253, 0.15);
+  padding: 0.8rem 2rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional: add glow on hover/scroll */
+.navbar:hover {
+  box-shadow: 0 6px 25px rgba(13, 110, 253, 0.25);
+}
+
+
+/* Brand style */
+.glow-text {
+  color: #fff;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(13, 110, 253, 0.2);
+}
+
+.brand-dot {
+  color: #0d6efd;
+  font-size: 2rem;
+}
+
+/* Links */
+.nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  margin: 0 10px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #0d6efd !important;
+  transform: translateY(-2px);
+}
+
+/* Underline animation */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #0d6efd;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* User image styling */
+/* .user-png {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+ filter: brightness(0.9) invert(0.9);
+  transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+.user-png:hover {
+  transform: scale(1.1);
+  filter: brightness(0.9) invert(0.9);
+} */
+/* Align links on left when navbar collapses */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: left !important;
+  }
+
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+}

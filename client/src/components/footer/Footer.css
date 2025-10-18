@@ -1,0 +1,25 @@
+.footer {
+  width: 100%;
+  /* MATCH HOME BACKGROUND EXACTLY */
+  background: radial-gradient(circle at top left, #0d1117, #000), transparent; 
+  color: #ffffff;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border: none; /* remove any border */
+  box-shadow: none; /* remove any shadow */
+}
+
+.footer-text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75); /* slightly softer for readability */
+  font-weight: 400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}

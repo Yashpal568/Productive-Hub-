@@ -1,0 +1,359 @@
+/* ===== TASK PAGE BACKGROUND ===== */
+.task-page {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #0d1117, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.task-page::before,
+.task-page::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13, 110, 253, 0.15), transparent);
+  animation: float 6s ease-in-out infinite;
+}
+
+.task-page::after {
+  right: -80px;
+  bottom: -50px;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ===== MAIN CONTAINER ===== */
+.task-container {
+  position: relative;
+  margin-top: 50px;
+  z-index: 2;
+  max-width: 800px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 22px;
+  padding: 2rem 3rem;
+  box-shadow: 0 0 18px rgba(13, 110, 253, 0.1);
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: box-shadow 0.3s ease;
+}
+
+.task-container:hover {
+  box-shadow: 0 0 25px rgba(13, 110, 253, 0.15);
+}
+
+/* ===== HEADINGS ===== */
+.task-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding-bottom: 20px;
+}
+
+.task-title span {
+  color: #0d6efd;
+}
+
+.task-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* ===== INPUT SECTION ===== */
+.task-input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+  text-align: left;
+}
+
+.task-input,
+.task-body {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(13, 110, 253, 0.25);
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.task-input:focus,
+.task-body:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 6px rgba(13, 110, 253, 0.4);
+}
+
+/* ===== ADD BUTTON ===== */
+.btn-add {
+  background-color: #0d6efd;
+  color: #fff;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-end;
+  font-weight: 500;
+}
+
+.btn-add:hover {
+  background-color: #2b7bff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+}
+
+/* ===== TASK LIST ===== */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== TASK CARD (From TaskCard.jsx) ===== */
+.task-item {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(13, 110, 253, 0.15);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: all 0.25s ease;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 12px rgba(13, 110, 253, 0.15);
+}
+
+/* Completed state */
+.task-item.completed h3,
+.task-item.completed p {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Text */
+.task-text {
+  flex: 1;
+  cursor: pointer;
+}
+
+.task-text h3 {
+  margin: 0;
+  color: #0d6efd;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.task-text p {
+  margin-top: 5px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+}
+
+/* Action buttons */
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit,
+.btn-delete {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  padding: 6px;
+}
+
+.btn-edit {
+  color: #4db8ff;
+}
+
+.btn-edit:hover {
+  color: #82cdff;
+  transform: scale(1.15);
+}
+
+.btn-delete {
+  color: #ff5b5b;
+}
+
+.btn-delete:hover {
+  color: #ff7676;
+  transform: scale(1.15);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .task-container {
+    padding: 1.5rem;
+    margin-top: 100px;
+  }
+
+  .task-title {
+    font-size: 1.9rem;
+  }
+
+  .task-input-section .btn-add {
+    width: 100%;
+    align-self: center;
+    padding: 12px;
+    border-radius: 10px;
+  }
+}
+
+  /* === Popup Window === */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 14, 20, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeIn 0.3s ease-in-out;
+    padding: 1rem;
+  }
+
+  .popup-box {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    width: 50%;
+    margin-top: 50px;
+    box-shadow: 0 0 25px rgba(0, 180, 255, 0.3);
+    text-align: center;
+  }
+  .popup-box .task-input,
+  .popup-box .task-body {
+    text-align: left;
+    width: 100%; 
+    margin-bottom: 1rem; 
+  }
+
+  .popup-title {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  .popup-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  @media (min-width: 480px) {
+    .popup-buttons {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .btn-cancel {
+    background: transparent;
+    border: 1px solid #555;
+    color: #aaa;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+  }
+
+  .popup-buttons .btn-add {
+    width: 100%;
+  }
+/* On larger screens, let buttons shrink */
+  @media (min-width: 480px) {
+    .btn-cancel,
+    .popup-buttons .btn-add {
+      width: auto;
+    }
+  }
+
+  .btn-cancel:hover {
+    color: #fff;
+    border-color: #fff;
+  }
+
+ /* === Responsive Design === */
+@media (max-width: 768px) {
+  .popup-box {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .popup-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-box {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .popup-title {
+    font-size: 1.3rem;
+  }
+
+  .btn-cancel, 
+  .popup-buttons .btn-add {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+
+  .popup-box .task-body {
+    min-height: 120px; /* Give popup textarea a good height */
+  }
+
+}
+
+/* === Fade-In Animation === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
