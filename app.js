@@ -3,7 +3,7 @@ require("dotenv").config(); // Load .env
 const connectDB = require("./connections/db");
 const cors = require("cors");
 const path = require("path");
-
+const serverless = require("serverless-http");
 const auth = require("./routes/auth");
 const list = require("./routes/list");
 
@@ -32,3 +32,7 @@ app.get("/", (req, res) => {
 // ===== START SERVER =====
 const PORT = process.env.PORT || 1000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
+
+// ===== EXPORT FOR VERCEL SERVERLESS =====
+module.exports = serverless(app);
