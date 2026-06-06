@@ -30,9 +30,11 @@ app.get("/", (req, res) => {
 });
 
 // ===== START SERVER =====
-const PORT = process.env.PORT || 1000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+if (require.main === module) {
+  const PORT = process.env.PORT || 1000;
+  app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+}
 
 
 // ===== EXPORT FOR VERCEL SERVERLESS =====
-module.exports = serverless(app);
+module.exports = app;
