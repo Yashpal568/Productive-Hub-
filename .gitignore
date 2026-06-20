@@ -1,3 +1,7 @@
 # Node environment variables
 .env
+<<<<<<< HEAD
 .node_module
+=======
+node_modules/
+>>>>>>> 685724d30c73f3a3ccecd330f07d0bf11c8911c2
