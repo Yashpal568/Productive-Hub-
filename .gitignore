@@ -1,10 +1,13 @@
 # Node environment variables
 .env
-<<<<<<< HEAD
-.node_module
-=======
+
+# Node modules
 node_modules/
+<<<<<<< HEAD
 >>>>>>> 685724d30c73f3a3ccecd330f07d0bf11c8911c2
+=======
+
+>>>>>>> ffed73638f910427e6331060323dc18c5658e76e
 # Logs
 logs
 *.log
@@ -14,7 +17,11 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+<<<<<<< HEAD
 node_modules
+=======
+# Build outputs
+>>>>>>> ffed73638f910427e6331060323dc18c5658e76e
 dist
 dist-ssr
 *.local
@@ -29,6 +36,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> ffed73638f910427e6331060323dc18c5658e76e
