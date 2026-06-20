@@ -1,2 +1,3 @@
 # Node environment variables
 .env
+.node_module
